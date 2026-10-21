@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Paisa Plan | Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2 class="logo">💸 Paisa<span>Plan</span></h2>
+    <nav>
+      <a href="#dashboard" class="nav-link active">▦ Dashboard</a>
+      <a href="#transactions" class="nav-link">↔ Transactions</a>
+      <a href="#analytics" class="nav-link">◷ Budget &amp; Analytics</a>
+    </nav>
+    <p class="sidebar-footer">Your money. Your plan.</p>
+  </aside>
+
+  <main class="main-content" id="dashboard">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">YOUR FINANCIAL OVERVIEW</p>
+        <h1>Dashboard</h1>
+        <p>Track your spending. Stay in control.</p>
+      </div>
+      <button type="button" id="addExpenseBtn" class="primary-btn"
+        onclick="window.openExpenseForm()">+ Add Expense</button>
+    </header>
+
+    <section class="stats-grid">
+      <article class="card stat-card">
+        <p>Total Spent This Month</p>
+        <h2 id="monthlyTotal">₹0.00</h2>
+        <span class="positive">Monthly overview</span>
+      </article>
+      <article class="card stat-card">
+        <p>Spent Today</p>
+        <h2 id="todayTotal">₹0.00</h2>
+        <span class="positive">Today's spending</span>
+      </article>
+      <article class="card stat-card">
+        <p>Monthly Budget</p>
+        <h2 id="budgetTotal">₹5,000.00</h2>
+        <span id="budgetStatus">Within your budget</span>
+      </article>
+    </section>
+
+    <section class="overview-grid" id="analytics">
+      <article class="card">
+        <h3>Monthly Budget</h3>
+        <div class="progress-track">
+          <div id="budgetProgress" class="progress-fill"></div>
+        </div>
+        <p id="budgetSummary" class="muted">₹5,000.00 available</p>
+        <form id="budgetForm" class="budget-form">
+          <label for="budgetInput">Set monthly budget (₹)</label>
+          <div class="budget-controls">
+            <input type="number" id="budgetInput" min="1" step="0.01"
+              placeholder="Enter budget" required>
+            <button class="primary-btn" type="submit">Save</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="card">
+        <h3>Quick Tip 💡</h3>
+        <p class="muted">Small expenses add up. Record each transaction to understand where your money goes.</p>
+        <p id="smartTip" class="smart-tip"></p>
+      </article>
+    </section>
+
+    <section class="charts-grid">
+      <article class="card chart-card">
+        <h3>Spending by Category</h3>
+        <p class="muted">Current month's expense breakdown</p>
+        <div class="chart-container">
+          <canvas id="categoryChart"></canvas>
+          <p id="categoryEmpty" class="empty-chart">
+            Add expenses to see your category chart.
+          </p>
+        </div>
+      </article>
+
+      <article class="card chart-card">
+        <h3>Monthly Spending Trends</h3>
+        <p class="muted">Your expenses over the last six months</p>
+        <div class="chart-container">
+          <canvas id="trendChart"></canvas>
+          <p id="trendEmpty" class="empty-chart">
+            Add expenses to see your monthly trends.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="card transactions-card" id="transactions">
+      <div class="section-heading">
+        <div>
+          <h3>Recent Transactions</h3>
+          <p class="muted">Review and manage your expenses.</p>
+        </div>
+        <div class="transaction-actions">
+          <input type="search" id="searchInput"
+            placeholder="Search expenses..." aria-label="Search expenses">
+          <button type="button" id="exportBtn" class="secondary-btn">
+            ↓ Export CSV
+          </button>
+        </div>
+      </div>
+
+      <form id="expenseForm" class="expense-form">
+        <h3 id="formTitle">Add a New Expense</h3>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="amount">Amount (₹)</label>
+            <input type="number" id="amount" min="0.01" step="0.01"
+              placeholder="e.g. 250" required>
+          </div>
+
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Education</option>
+              <option>Shopping</option>
+              <option>Subscriptions</option>
+              <option>Bills</option>
+              <option>Health</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <div class="field">
+            <label for="payment">Payment Method</label>
+            <select id="payment" required>
+              <option>UPI</option>
+              <option>Cash</option>
+              <option>Card</option>
+              <option>Net Banking</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field full-width">
+            <label for="description">Description</label>
+            <input type="text" id="description" maxlength="100"
+              placeholder="e.g. Lunch with friends" required>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="submitExpenseBtn" class="primary-btn">
+            Add Expense
+          </button>
+          <button type="button" id="cancelBtn" class="secondary-btn" hidden>
+            Cancel Edit
+          </button>
+        </div>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+
+      <div id="transactionList" class="transaction-list"></div>
+      <p id="transactionSummary" class="transaction-summary"></p>
+    </section>
+
+    <footer class="page-footer">
+      Made with 💜 for smarter spending · Paisa Plan
+    </footer>
+  </main>
+</body>
+</html>
