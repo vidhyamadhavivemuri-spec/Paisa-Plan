@@ -108,23 +108,6 @@ The **Classy & Animated Edition (v2.0)** brings an executive fintech visual expe
 
 ---
 
-## 🚀 How to Run the Project Locally
-
-### Method 1: Instant Launch (Double Click)
-1. Navigate to:
-   ```
-   C:\Users\vidhy\.gemini\antigravity\scratch\paisa-plan\
-   ```
-2. Double-click **`run.bat`** or **`index.html`** to launch in Google Chrome, Edge, or Firefox.
-
-### Method 2: Python HTTP Server (Terminal)
-```powershell
-cd C:\Users\vidhy\.gemini\antigravity\scratch\paisa-plan
-python -m http.server 8000
-```
-Open `http://localhost:8000`.
-
----
 
 ## 🎓 College Viva / Project Presentation Highlights
 1. **Executive Aesthetics & Motion Design**: 3D virtual platinum card, aurora background, and number roll-up animations demonstrate cutting-edge frontend capabilities.
