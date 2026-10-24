@@ -1,15 +1,5 @@
 # Paisa Plan — Smart Personal Expense Tracker (Classy & Animated Edition)
 
-> **An ultra-modern, animated, and luxurious personal expense tracking web application built with HTML5, CSS3, Vanilla JavaScript, and Chart.js.**
-
-![Paisa Plan Theme](https://img.shields.io/badge/Theme-Obsidian%20Luxury%20%2B%20Executive%20Light-10b981?style=for-the-badge)
-![Edition](https://img.shields.io/badge/Edition-Animated%20%26%20Classy%20v2.0-8b5cf6?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Complete%20%26%20Tested-success?style=for-the-badge)
-![Audio](https://img.shields.io/badge/Audio-Synthesized%20Web%20Audio-blue?style=for-the-badge)
-![Storage](https://img.shields.io/badge/Storage-Browser%20LocalStorage-orange?style=for-the-badge)
-
----
-
 ## 📌 Project Overview
 **Paisa Plan** empowers users to record daily personal expenditures, understand their spending patterns, manage monthly budgets, track savings goals, audit recurring subscriptions, and make smarter financial decisions.
 
@@ -17,32 +7,6 @@ The **Classy & Animated Edition (v2.0)** brings an executive fintech visual expe
 
 ---
 
-## ✨ New Classy & Animated Features (v2.0 Highlights)
-
-### 1. 🌌 Ambient Aurora Animated Mesh Background
-- Floating luminous gradient orbs (*Emerald Mint, Electric Cyan, Royal Violet*) drifting organically in the background (`@keyframes auroraDrift`).
-- Frosted glass cards (`backdrop-filter: blur(20px)`) that float effortlessly on top of the ambient mesh.
-
-### 2. 💳 3D Virtual Platinum Card Showcase
-- Interactive virtual debit/credit card on the executive dashboard with dynamic 3D mouse perspective tilt.
-- Realistic EMV gold chip styling, contactless payment symbol, and holographic foil badge.
-- Live real-time monthly spend counter and budget utilization progress bar right on the card surface.
-
-### 3. ✨ Paisa Financial Health Score Algorithm
-- Live composite score (0 to 100) analyzing budget runway, daily spending velocity, and savings consistency.
-- Animated circular SVG progress meter with glowing stroke fill.
-- Real-time rating badges: *✦ STELLAR MASTERY*, *✦ EXCELLENT PACING*, *⚠️ MODERATE PACING*, and *🚨 DEFICIT ALERT*.
-
-### 4. 🔢 Fluid Number Counter Roll-Up Engine
-- Financial numbers roll up smoothly with cubic ease-out motion whenever amounts change or views load.
-- Tabular figures typography (`font-feature-settings: "tnum"`) prevents digit jitter during animation.
-
-### 5. 🔊 Synthesized Web Audio Haptic & Chime Feedback
-- Zero external MP3/WAV files — generated live using standard browser `AudioContext`.
-- Soft, glassy menu clicks, chime confirmations upon recording expenses, and euphoric celebration arpeggios when goals are reached.
-- Master sound toggle (`🔊 / 🔇`) in the header bar and settings.
-
----
 
 ## 📊 Comprehensive Feature Suite
 
